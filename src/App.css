@@ -4,7 +4,7 @@
   box-sizing: border-box;
 
 }
-image{
+img{
   height: 100%;
 
 }
@@ -83,4 +83,46 @@ hr{
 }
 .clear-btn:hover{
   background-color: rgba(165, 42, 42, 0.383);
+}
+.cart-item{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.tel-info{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+}
+.tel-info>h4{
+  color: grey;
+
+}
+.remove-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: dodgerblue;
+}
+.amount-btn{
+width: 20px;
+height: 20px;
+background-color: transparent;
+border: none;
+cursor: pointer;
+}
+.amount-btn>svg{
+  fill: dodgerblue;
+}
+.amount{
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
 }
