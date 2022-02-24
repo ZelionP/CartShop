@@ -29,17 +29,30 @@ const reducer = (state, action) => {
             .filter(item => item.amount !== 0)
         return { ...state, cart: currentCart }
     }
+
     if (action.type === "GET_TOTALS") {
-        let {amount, total} = state.cart.reduce((acc, item) =>{
-            const {amount} = item
+        let { amount, total } = state.cart.reduce((acc, item) => {
+
+            const { amount, price } = item
+            const itemTotal = price * amount
+
             acc.amount += amount
+            acc.total += itemTotal
 
 
 
             return acc
-        }, {amount:0, total:0}) 
-        return{...state, amount}
+        }, { amount: 0, total: 0 })
+        return { ...state, amount, total: total.toFixed(2) }
     }
+    if (action.type = "SHOW_ITEMS"){
+        return {...state, cart: action.payload, loading:false}
+    }
+
+    if (action.type === "SET_LOADING") {
+        return {...state, loading:true}
+    }
+
     return new Error("This type of action does not exist!")
 }
 
